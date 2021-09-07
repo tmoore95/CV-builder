@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
+import { uuid } from "uuidv4";
 import CvContext from "../../store/cv-context";
 
 const WorkExperience = (props) => {
@@ -13,6 +14,7 @@ const WorkExperience = (props) => {
     position: "",
     startDate: "",
     endDate: "",
+    id: "",
   });
 
   const workExperienceHandler = (event) => {
@@ -22,14 +24,21 @@ const WorkExperience = (props) => {
       position: positionRef.current.value,
       startDate: startDateRef.current.value,
       endDate: endDateRef.current.value,
+      id: Math.random() * 1000,
     });
   };
 
   useEffect(() => {
     if (workExperience.company.length > 0) {
       ctx.addWorkExperience(workExperience);
+      console.log(workExperience);
     }
-  }, [workExperience]);
+  }, [
+    workExperience.company,
+    workExperience.position,
+    workExperience.startDate,
+    workExperience.endDate,
+  ]);
 
   return (
     <React.Fragment>

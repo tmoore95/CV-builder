@@ -1,18 +1,19 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
+import { uuid } from "uuidv4";
 import CvContext from "../../store/cv-context";
 
 const Skill = (props) => {
   const skillRef = useRef();
   const ctx = useContext(CvContext);
-  const [skill, setSkill] = useState("");
+  const [skill, setSkill] = useState({ skill: "", id: "" });
 
   const skillHandler = (event) => {
     event.preventDefault();
-    setSkill(skillRef.current.value);
+    setSkill({ skill: skillRef.current.value, id: uuid() });
   };
 
   useEffect(() => {
-    if (skill.length > 0) {
+    if (skill.skill.length > 0) {
       ctx.addSkill(skill);
     }
   }, [skill]);

@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import CvContext from "../../store/cv-context";
 
+import { uuid } from "uuidv4";
+
 const Education = (props) => {
   const institutionRef = useRef();
   const qualificationRef = useRef();
@@ -13,6 +15,7 @@ const Education = (props) => {
     qualification: "",
     startDate: "",
     endDate: "",
+    id: "",
   });
 
   const educationHandler = (event) => {
@@ -22,14 +25,21 @@ const Education = (props) => {
       qualification: qualificationRef.current.value,
       startDate: startDateRef.current.value,
       endDate: endDateRef.current.value,
+      id: Math.random() * 1000,
     });
   };
 
   useEffect(() => {
     if (education.institution.length > 0) {
       ctx.addEducation(education);
+      console.log(education);
     }
-  }, [education]);
+  }, [
+    education.institution,
+    education.qualification,
+    education.startDate,
+    education.endDate,
+  ]);
 
   return (
     <React.Fragment>

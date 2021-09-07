@@ -16,17 +16,20 @@ export const CvContextProvider = (props) => {
       qualification: "Web Development",
       startDate: "April 2020",
       endDate: "June 2020",
-      key: 1,
+      id: 1,
     },
   ]);
-  const [skill, setSkill] = useState(["Javascript", "React"]);
+  const [skill, setSkill] = useState([
+    { skill: "Javascript", id: 1 },
+    { skill: "React", id: 2 },
+  ]);
   const [workExperience, setWorkExperience] = useState([
     {
       company: "Elder",
       position: "Carer Support Associate",
       startDate: "February 2020",
       endDate: "March 2021",
-      key: 1,
+      id: 1,
     },
   ]);
 
@@ -39,15 +42,15 @@ export const CvContextProvider = (props) => {
   };
 
   const addEducation = (education) => {
-    setEducation((prev) => [...prev, education].reverse());
+    setEducation((prev) => [education, ...prev]);
   };
 
   const addSkill = (skill) => {
-    setSkill((prev) => [...prev, skill].reverse());
+    setSkill((prev) => [skill, ...prev]);
   };
 
   const addWorkExperience = (workExperience) => {
-    setWorkExperience((prev) => [...prev, workExperience].reverse());
+    setWorkExperience((prev) => [workExperience, ...prev]);
   };
 
   return (

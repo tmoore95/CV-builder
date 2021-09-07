@@ -17,3 +17,7 @@
 .cv div {
   margin: 15px;
 }
+
+.cv ul {
+  list-style-type: none;
+}
