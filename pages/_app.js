@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import { CvContextProvider } from "../store/cv-context";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <CvContextProvider>
+      <Component {...pageProps} />
+    </CvContextProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

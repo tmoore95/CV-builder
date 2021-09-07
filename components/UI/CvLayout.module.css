@@ -1,0 +1,19 @@
+.cv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.cv p {
+  text-align: center;
+  margin: 0;
+}
+
+.cv div {
+  margin: 15px;
+}
