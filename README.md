@@ -4,5 +4,5 @@ A simple, one page app that allows users to construct a CV with their personal i
 
 ## Tools
 
-- React
-- NextJS
+* React
+* NextJS
