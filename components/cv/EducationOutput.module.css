@@ -1,0 +1,8 @@
+.edu {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu h5 {
+  margin: 2px 0;
+}

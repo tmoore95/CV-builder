@@ -3,6 +3,60 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  width: 500px;
+  width: 600px;
   background-color: lightblue;
+  color: #263547;
+  padding: 10px;
+  box-shadow: 0 0 5px 5px lightgrey;
+  border: 3px solid #263547;
+}
+
+.main input {
+  width: 300px;
+  text-align: center;
+}
+
+.main textarea {
+  width: 300px;
+  max-height: 150px;
+  min-height: 39px;
+  resize: vertical;
+  text-align: center;
+}
+
+.main form {
+  text-align: center;
+}
+
+.main textarea,
+.main input {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  display: block;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 2px;
+  box-shadow: 0 0 5px lightgrey;
+}
+
+.main textarea:focus,
+.main input:focus {
+  outline: none;
+  background-color: #fff9db;
+}
+
+.main button {
+  border-radius: 3px;
+  border: 1px solid black;
+  background-color: #263547;
+  color: white;
+}
+
+.main button:hover {
+  opacity: 50%;
+  transition: 0.2s;
+}
+
+.main h1 {
+  margin-bottom: 5px;
 }

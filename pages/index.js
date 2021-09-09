@@ -15,11 +15,11 @@ function HomePage() {
     <React.Fragment>
       <PageLayout>
         <FormLayout>
+          <Contact />
           <AboutMe />
           <WorkExperience />
           <Education />
           <Skill />
-          <Contact />
         </FormLayout>
         <CvLayout>
           <CvOutput />

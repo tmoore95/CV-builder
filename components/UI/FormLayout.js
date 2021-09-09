@@ -4,7 +4,10 @@ import styles from "./FormLayout.module.css";
 const FormLayout = (props) => {
   return (
     <div>
-      <main className={styles.main}>{props.children}</main>
+      <main className={styles.main}>
+        <h1>CV Builder</h1>
+        {props.children}
+      </main>
     </div>
   );
 };

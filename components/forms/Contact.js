@@ -2,28 +2,39 @@ import React, { useState, useRef, useContext, useEffect } from "react";
 import CvContext from "../../store/cv-context";
 
 const Contact = (props) => {
+  // Defining refs, initial state values and context
+
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
   const phoneNumberRef = useRef();
+  const professionRef = useRef();
+
+  // Update state on form submission
 
   const [contact, setContact] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phoneNumber: "",
+    profession: "",
   });
   const ctx = useContext(CvContext);
+
+  // Update state on form submission
 
   const contactHandler = (event) => {
     event.preventDefault();
     setContact({
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
+      firstName: firstNameRef.current.value.toUpperCase(),
+      lastName: lastNameRef.current.value.toUpperCase(),
       email: emailRef.current.value,
       phoneNumber: phoneNumberRef.current.value,
+      profession: professionRef.current.value.toUpperCase(),
     });
   };
+
+  // Updating context through useEffect
 
   useEffect(() => {
     if (contact.firstName.length > 0) {
@@ -33,7 +44,7 @@ const Contact = (props) => {
 
   return (
     <React.Fragment>
-      <h2>Contact</h2>
+      <h3>Contact</h3>
       <form onSubmit={contactHandler}>
         <input
           ref={firstNameRef}
@@ -49,7 +60,13 @@ const Contact = (props) => {
           placeholder="Phone number"
           required
         />
-        <input type="submit" />
+        <input
+          ref={professionRef}
+          type="text"
+          placeholder="Profession"
+          required
+        />
+        <button>Enter</button>
       </form>
     </React.Fragment>
   );

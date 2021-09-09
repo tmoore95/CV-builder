@@ -4,6 +4,8 @@ import CvContext from "../../store/cv-context";
 import { uuid } from "uuidv4";
 
 const Education = (props) => {
+  // Defining refs, initial state values and context
+
   const institutionRef = useRef();
   const qualificationRef = useRef();
   const startDateRef = useRef();
@@ -18,6 +20,8 @@ const Education = (props) => {
     id: "",
   });
 
+  // Update state on form submission
+
   const educationHandler = (event) => {
     event.preventDefault();
     setEducation({
@@ -28,6 +32,8 @@ const Education = (props) => {
       id: Math.random() * 1000,
     });
   };
+
+  // Updating context through useEffect
 
   useEffect(() => {
     if (education.institution.length > 0) {
@@ -43,7 +49,7 @@ const Education = (props) => {
 
   return (
     <React.Fragment>
-      <h2>Education</h2>
+      <h3>Education</h3>
       <form onSubmit={educationHandler}>
         <input
           ref={institutionRef}
@@ -64,7 +70,7 @@ const Education = (props) => {
           required
         />
         <input ref={endDateRef} type="text" placeholder="End Date" required />
-        <input type="submit" />
+        <button>Enter</button>
       </form>
     </React.Fragment>
   );

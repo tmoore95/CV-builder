@@ -3,12 +3,17 @@ import { createContext, useState } from "react";
 const CvContext = createContext();
 
 export const CvContextProvider = (props) => {
-  const [aboutMe, setAboutMe] = useState("This is my bio");
+  // Initial setting of state
+
+  const [aboutMe, setAboutMe] = useState(
+    "Creative and motivated developer with a drive to create effective web applications that can make life easier."
+  );
   const [contact, setContact] = useState({
-    firstName: "Tom",
-    lastName: "Moore",
+    firstName: "TOM",
+    lastName: "MOORE",
     email: "tom_moore95@hotmail.co.uk",
     phoneNumber: "07476652491",
+    profession: "FULL STACK DEVELOPER",
   });
   const [education, setEducation] = useState([
     {
@@ -22,6 +27,9 @@ export const CvContextProvider = (props) => {
   const [skill, setSkill] = useState([
     { skill: "Javascript", id: 1 },
     { skill: "React", id: 2 },
+    { skill: "Ruby", id: 3 },
+    { skill: "HTML", id: 4 },
+    { skill: "CSS", id: 5 },
   ]);
   const [workExperience, setWorkExperience] = useState([
     {
@@ -32,6 +40,8 @@ export const CvContextProvider = (props) => {
       id: 1,
     },
   ]);
+
+  // Methods to update the state from each component
 
   const addAboutMe = (aboutMe) => {
     setAboutMe(aboutMe);

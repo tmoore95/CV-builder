@@ -3,21 +3,12 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  justify-content: center;
   width: 500px;
-  height: 100vh;
-  border: 1px solid black;
+  height: 700px;
+  box-shadow: 0 0 5px 5px lightgrey;
 }
 
 .cv p {
-  text-align: center;
   margin: 0;
-}
-
-.cv div {
-  margin: 15px;
-}
-
-.cv ul {
-  list-style-type: none;
+  font-size: 10px;
 }

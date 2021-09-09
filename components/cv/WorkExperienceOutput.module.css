@@ -1,0 +1,11 @@
+.job {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.job h5 {
+  margin: 2px 0;
+}
+
+

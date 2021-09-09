@@ -2,14 +2,20 @@ import React, { useState, useRef, useContext, useEffect } from "react";
 import CvContext from "../../store/cv-context";
 
 const AboutMe = (props) => {
+  // Defining refs, initial state values and context
+
   const aboutMeRef = useRef();
   const ctx = useContext(CvContext);
   const [aboutMe, setAboutMe] = useState("");
+
+  // Update state on form submission
 
   const aboutMeHandler = (event) => {
     event.preventDefault();
     setAboutMe(aboutMeRef.current.value);
   };
+
+  // Updating context through useEffect
 
   useEffect(() => {
     if (aboutMe.length > 0) {
@@ -19,10 +25,10 @@ const AboutMe = (props) => {
 
   return (
     <React.Fragment>
-      <h2>About Me</h2>
+      <h3>About Me</h3>
       <form onSubmit={aboutMeHandler}>
-        <textarea ref={aboutMeRef} placeholder="Sell yourself" required />
-        <input type="submit" />
+        <textarea ref={aboutMeRef} placeholder="Sell yourself!" required />
+        <button>Enter</button>
       </form>
     </React.Fragment>
   );

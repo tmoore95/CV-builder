@@ -3,6 +3,8 @@ import { uuid } from "uuidv4";
 import CvContext from "../../store/cv-context";
 
 const WorkExperience = (props) => {
+  // Defining refs, initial state values and context
+
   const companyRef = useRef();
   const positionRef = useRef();
   const startDateRef = useRef();
@@ -17,6 +19,8 @@ const WorkExperience = (props) => {
     id: "",
   });
 
+  // Update state on form submission
+
   const workExperienceHandler = (event) => {
     event.preventDefault();
     setWorkExperience({
@@ -27,6 +31,8 @@ const WorkExperience = (props) => {
       id: Math.random() * 1000,
     });
   };
+
+  // Updating context through useEffect
 
   useEffect(() => {
     if (workExperience.company.length > 0) {
@@ -42,7 +48,7 @@ const WorkExperience = (props) => {
 
   return (
     <React.Fragment>
-      <h2>Work Experience</h2>
+      <h3>Work Experience</h3>
       <form onSubmit={workExperienceHandler}>
         <input ref={companyRef} type="text" placeholder="Company" required />
         <input ref={positionRef} type="text" placeholder="Position" required />
@@ -53,7 +59,7 @@ const WorkExperience = (props) => {
           required
         />
         <input ref={endDateRef} type="text" placeholder="End date" required />
-        <input type="submit" />
+        <button>Enter</button>
       </form>
     </React.Fragment>
   );
