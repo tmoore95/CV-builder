@@ -42,25 +42,80 @@ const Contact = (props) => {
     }
   }, [contact]);
 
+  // Customising invalid input prompt
+
+  useEffect(() => {
+    const firstNameInput = document.getElementById("firstName");
+    firstNameInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter your first name!");
+    };
+    firstNameInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+    const lastNameInput = document.getElementById("lastName");
+    lastNameInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter your last name!");
+    };
+    lastNameInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+    const emailInput = document.getElementById("email");
+    emailInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter your email!");
+    };
+    emailInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+    const phoneNumberInput = document.getElementById("phoneNumber");
+    phoneNumberInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter your phone number!");
+    };
+    phoneNumberInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+    const professionInput = document.getElementById("profession");
+    professionInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter your profession!");
+    };
+    professionInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+  }, []);
+
   return (
     <React.Fragment>
       <h3>Contact</h3>
       <form onSubmit={contactHandler}>
         <input
+          id="firstName"
           ref={firstNameRef}
           type="text"
           placeholder="First name"
           required
         />
-        <input ref={lastNameRef} type="text" placeholder="Last name" required />
-        <input ref={emailRef} type="email" placeholder="Email" required />
         <input
+          id="lastName"
+          ref={lastNameRef}
+          type="text"
+          placeholder="Last name"
+          required
+        />
+        <input
+          id="email"
+          ref={emailRef}
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          id="phoneNumber"
           ref={phoneNumberRef}
           type="text"
           placeholder="Phone number"
           required
         />
         <input
+          id="profession"
           ref={professionRef}
           type="text"
           placeholder="Profession"

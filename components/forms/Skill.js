@@ -22,13 +22,28 @@ const Skill = (props) => {
     if (skill.skill.length > 0) {
       ctx.addSkill(skill);
     }
-  }, [skill]);
+  }, [skill.skill]);
+
+  // Customising invalid input prompt
+
+  useEffect(() => {
+    const skillInput = document.getElementById("skill");
+    skillInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter a skill!");
+    };
+  }, []);
 
   return (
     <React.Fragment>
       <h3>Skill</h3>
       <form onSubmit={skillHandler}>
-        <input ref={skillRef} type="text" placeholder="Skill" required />
+        <input
+          id="skill"
+          ref={skillRef}
+          type="text"
+          placeholder="Skill"
+          required
+        />
         <button>Enter</button>
       </form>
     </React.Fragment>

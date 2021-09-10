@@ -23,11 +23,25 @@ const AboutMe = (props) => {
     }
   }, [aboutMe]);
 
+  // Customising invalid input prompt
+
+  useEffect(() => {
+    const aboutMeInput = document.getElementById("aboutMe");
+    aboutMeInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter your bio!");
+    };
+  }, []);
+
   return (
     <React.Fragment>
       <h3>About Me</h3>
       <form onSubmit={aboutMeHandler}>
-        <textarea ref={aboutMeRef} placeholder="Sell yourself!" required />
+        <textarea
+          id="aboutMe"
+          ref={aboutMeRef}
+          placeholder="Sell yourself!"
+          required
+        />
         <button>Enter</button>
       </form>
     </React.Fragment>

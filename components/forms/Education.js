@@ -38,7 +38,6 @@ const Education = (props) => {
   useEffect(() => {
     if (education.institution.length > 0) {
       ctx.addEducation(education);
-      console.log(education);
     }
   }, [
     education.institution,
@@ -47,29 +46,71 @@ const Education = (props) => {
     education.endDate,
   ]);
 
+  // Customising invalid input prompt
+
+  useEffect(() => {
+    const institutionInput = document.getElementById("institution");
+    institutionInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter an institution name!");
+    };
+    institutionInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+    const qualificationInput = document.getElementById("qualification");
+    qualificationInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter a qualification name!");
+    };
+    qualificationInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+    const startDateInput = document.getElementById("startDate");
+    startDateInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter a starting date!");
+    };
+    startDateInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+    const endDateInput = document.getElementById("endDate");
+    endDateInput.oninvalid = (e) => {
+      e.target.setCustomValidity("Please enter an ending date!");
+    };
+    endDateInput.oninput = (e) => {
+      e.target.setCustomValidity("");
+    };
+  }, []);
+
   return (
     <React.Fragment>
       <h3>Education</h3>
       <form onSubmit={educationHandler}>
         <input
+          id="institution"
           ref={institutionRef}
           type="text"
           placeholder="Institution"
           required
         />
         <input
+          id="qualification"
           ref={qualificationRef}
           type="text"
           placeholder="Qualification"
           required
         />
         <input
+          id="startDate"
           ref={startDateRef}
           type="text"
           placeholder="Start Date"
           required
         />
-        <input ref={endDateRef} type="text" placeholder="End Date" required />
+        <input
+          id="endDate"
+          ref={endDateRef}
+          type="text"
+          placeholder="End Date"
+          required
+        />
         <button>Enter</button>
       </form>
     </React.Fragment>

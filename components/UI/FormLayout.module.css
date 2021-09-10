@@ -50,6 +50,7 @@
   border: 1px solid black;
   background-color: #263547;
   color: white;
+  padding-top: 2px;
 }
 
 .main button:hover {

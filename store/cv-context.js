@@ -51,16 +51,36 @@ export const CvContextProvider = (props) => {
     setContact(contact);
   };
 
-  const addEducation = (education) => {
-    setEducation((prev) => [education, ...prev]);
+  const addEducation = (newEducation) => {
+    if (education) {
+      setEducation((prev) => [newEducation, ...prev]);
+    } else {
+      setEducation([newEducation]);
+    }
   };
 
-  const addSkill = (skill) => {
-    setSkill((prev) => [skill, ...prev]);
+  const addSkill = (newSkill) => {
+    if (skill) {
+      setSkill((prev) => [newSkill, ...prev]);
+    } else {
+      setSkill([newSkill]);
+    }
   };
 
-  const addWorkExperience = (workExperience) => {
-    setWorkExperience((prev) => [workExperience, ...prev]);
+  const addWorkExperience = (newWorkExperience) => {
+    if (workExperience) {
+      setWorkExperience((prev) => [newWorkExperience, ...prev]);
+    } else {
+      setWorkExperience([newWorkExperience]);
+    }
+  };
+
+  const clearCv = () => {
+    setAboutMe();
+    setContact();
+    setEducation();
+    setSkill();
+    setWorkExperience();
   };
 
   return (
@@ -76,6 +96,7 @@ export const CvContextProvider = (props) => {
         addEducation,
         addSkill,
         addWorkExperience,
+        clearCv,
       }}
     >
       {props.children}
