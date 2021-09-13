@@ -30,6 +30,10 @@ const WorkExperience = (props) => {
       endDate: endDateRef.current.value,
       id: Math.random() * 1000,
     });
+    companyRef.current.value = "";
+    positionRef.current.value = "";
+    startDateRef.current.value = "";
+    endDateRef.current.value = "";
   };
 
   // Updating context through useEffect

@@ -83,6 +83,28 @@ export const CvContextProvider = (props) => {
     setWorkExperience();
   };
 
+  const clearAboutMe = () => {
+    setAboutMe();
+  };
+
+  const removeSkill = (id) => {
+    setSkill((prev) => [...prev.filter((skill) => skill.id !== id)]);
+  };
+
+  const removeEducation = (id) => {
+    setEducation((prev) => [
+      ...prev.filter((education) => education.id !== id),
+    ]);
+  };
+
+  const removeWorkExperience = (id) => {
+    setWorkExperience((prev) => [...prev.filter((job) => job.id !== id)]);
+  };
+
+  const clearContact = () => {
+    setContact();
+  };
+
   return (
     <CvContext.Provider
       value={{
@@ -97,6 +119,12 @@ export const CvContextProvider = (props) => {
         addSkill,
         addWorkExperience,
         clearCv,
+        clearAboutMe,
+        removeSkill,
+        removeEducation,
+        removeWorkExperience,
+        setContact,
+        clearContact,
       }}
     >
       {props.children}

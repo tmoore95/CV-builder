@@ -11,6 +11,18 @@ const CvOutput = () => {
     ctx.clearCv();
   };
 
+  const clearAboutMeHandler = () => {
+    ctx.clearAboutMe();
+  };
+
+  const removeSkillHandler = (id) => {
+    ctx.removeSkill(id);
+  };
+
+  const clearContactHandler = () => {
+    ctx.clearContact();
+  };
+
   return (
     <React.Fragment>
       <div className={styles.header}>
@@ -23,15 +35,46 @@ const CvOutput = () => {
       <div className={styles.body}>
         <div className={styles.sidebar}>
           <h4>ABOUT ME</h4>
+          {ctx.aboutMe && (
+            <button
+              className={styles.clearAboutMe}
+              onClick={clearAboutMeHandler}
+            >
+              x
+            </button>
+          )}
           <p>{ctx.aboutMe && ctx.aboutMe}</p>
           <h4>SKILLS</h4>
           {ctx.skill &&
             ctx.skill.map((skill) => {
-              return <p key={skill.id}>{skill.skill}</p>;
+              return (
+                <div className={styles.skill}>
+                  <p key={skill.id}>{skill.skill}</p>
+                  <button
+                    onClick={() => {
+                      removeSkillHandler(skill.id);
+                    }}
+                  >
+                    x
+                  </button>
+                </div>
+              );
             })}
-          <h4>CONTACT</h4>
-          <p>{ctx.contact && ctx.contact.email}</p>
-          <p>{ctx.contact && ctx.contact.phoneNumber}</p>
+          <div className={styles.flex}>
+            <h4>CONTACT</h4>
+            {ctx.contact && (
+              <button
+                className={styles.clearContact}
+                onClick={clearContactHandler}
+              >
+                x
+              </button>
+            )}
+          </div>
+          <div className={styles.contact}>
+            <p>{ctx.contact && ctx.contact.email}</p>
+            <p>{ctx.contact && ctx.contact.phoneNumber}</p>
+          </div>
         </div>
         <div className={styles.content}>
           <div className={styles.title}>
@@ -48,7 +91,9 @@ const CvOutput = () => {
             ctx.education.map((education) => (
               <EducationOutput key={education.id} education={education} />
             ))}
-          <button onClick={clearCvHandler}>Clear CV</button>
+          <button className={styles.clearCv} onClick={clearCvHandler}>
+            Clear CV
+          </button>
         </div>
       </div>
     </React.Fragment>

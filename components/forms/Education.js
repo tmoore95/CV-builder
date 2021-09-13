@@ -31,6 +31,10 @@ const Education = (props) => {
       endDate: endDateRef.current.value,
       id: Math.random() * 1000,
     });
+    institutionRef.current.value = "";
+    qualificationRef.current.value = "";
+    startDateRef.current.value = "";
+    endDateRef.current.value = "";
   };
 
   // Updating context through useEffect

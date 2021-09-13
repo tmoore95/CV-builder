@@ -32,6 +32,11 @@ const Contact = (props) => {
       phoneNumber: phoneNumberRef.current.value,
       profession: professionRef.current.value.toUpperCase(),
     });
+    firstNameRef.current.value = "";
+    lastNameRef.current.value = "";
+    emailRef.current.value = "";
+    phoneNumberRef.current.value = "";
+    professionRef.current.value = "";
   };
 
   // Updating context through useEffect

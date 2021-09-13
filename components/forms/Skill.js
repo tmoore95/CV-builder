@@ -14,6 +14,7 @@ const Skill = (props) => {
   const skillHandler = (event) => {
     event.preventDefault();
     setSkill({ skill: skillRef.current.value, id: uuid() });
+    skillRef.current.value = "";
   };
 
   // Updating context through useEffect

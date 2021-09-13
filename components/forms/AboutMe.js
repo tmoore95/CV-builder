@@ -13,6 +13,7 @@ const AboutMe = (props) => {
   const aboutMeHandler = (event) => {
     event.preventDefault();
     setAboutMe(aboutMeRef.current.value);
+    aboutMeRef.current.value = "";
   };
 
   // Updating context through useEffect
