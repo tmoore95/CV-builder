@@ -3,6 +3,7 @@ import CvContext from "../../store/cv-context";
 import EducationOutput from "./EducationOutput";
 import WorkExperienceOutput from "./WorkExperienceOutput";
 import styles from "./CvOutput.module.css";
+import { uuid } from "uuidv4";
 
 const CvOutput = () => {
   const ctx = useContext(CvContext);
@@ -48,9 +49,10 @@ const CvOutput = () => {
           {ctx.skill &&
             ctx.skill.map((skill) => {
               return (
-                <div className={styles.skill}>
+                <div key={uuid()} className={styles.skill}>
                   <p key={skill.id}>{skill.skill}</p>
                   <button
+                    key={uuid()}
                     onClick={() => {
                       removeSkillHandler(skill.id);
                     }}
