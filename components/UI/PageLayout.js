@@ -1,4 +1,4 @@
-import styles from "./PageLayout.module.css";
+import styles from "./PageLayout.module.scss";
 import React from "react";
 
 const PageLayout = (props) => {

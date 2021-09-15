@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CvContext from "../../store/cv-context";
-import styles from "./EducationOutput.module.css";
+import styles from "./EducationOutput.module.scss";
 
 const EducationOutput = (props) => {
   const ctx = useContext(CvContext);

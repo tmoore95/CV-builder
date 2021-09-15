@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import CvContext from "../../store/cv-context";
 import EducationOutput from "./EducationOutput";
 import WorkExperienceOutput from "./WorkExperienceOutput";
-import styles from "./CvOutput.module.css";
+import styles from "./CvOutput.module.scss";
 import { uuid } from "uuidv4";
 
 const CvOutput = () => {

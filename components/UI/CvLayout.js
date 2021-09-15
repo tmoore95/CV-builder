@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CvLayout.module.css";
+import styles from "./CvLayout.module.scss";
 
 const CvLayout = (props) => {
   return (

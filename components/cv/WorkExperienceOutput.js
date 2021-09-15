@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CvContext from "../../store/cv-context";
-import styles from "./WorkExperienceOutput.module.css";
+import styles from "./WorkExperienceOutput.module.scss";
 
 const WorkExperienceOutput = (props) => {
   const ctx = useContext(CvContext);
