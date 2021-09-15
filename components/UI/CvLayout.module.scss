@@ -6,6 +6,10 @@
   width: 500px;
   height: 700px;
   box-shadow: 0 0 5px 5px lightgrey;
+
+  @media (max-width: 481px) {
+    width: 100%;
+  }
 }
 
 .cv p {

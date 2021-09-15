@@ -7,6 +7,10 @@
   width: 500px;
   padding: 38px;
   height: 20%;
+
+  @media (max-width: 481px) {
+    width: 100%;
+  }
 }
 
 .header h1 {
@@ -67,6 +71,11 @@
   background-color: #263547;
   color: white;
   padding-top: 2px;
+
+  @media (max-width: 481px) {
+    top: 312px;
+    left: 122px;
+  }
 }
 
 .content button:hover {
@@ -76,7 +85,7 @@
 
 .clearAboutMe {
   position: relative;
-  top: -20px;
+  top: -28px;
   left: 147px;
   height: 13px;
   border-radius: 3px;
@@ -85,6 +94,10 @@
   color: white;
   font-size: 10px;
   padding: 0px 3px;
+
+  @media (max-width: 481px) {
+    left: 97px;
+  }
 }
 
 .sidebar button:hover {
@@ -107,6 +120,10 @@
   color: white;
   font-size: 10px;
   padding: 0px 3px;
+
+  @media (max-width: 481px) {
+    left: 24px;
+  }
 }
 
 .skill {
@@ -132,4 +149,12 @@
 
 .contact p {
   margin-bottom: 2px;
+  @media (max-width: 481px) {
+    width: 59%;
+    word-wrap: break-word;
+  }
+}
+
+.about {
+  margin-bottom: -18px;
 }

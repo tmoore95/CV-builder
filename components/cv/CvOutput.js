@@ -35,15 +35,17 @@ const CvOutput = () => {
       </div>
       <div className={styles.body}>
         <div className={styles.sidebar}>
-          <h4>ABOUT ME</h4>
-          {ctx.aboutMe && (
-            <button
-              className={styles.clearAboutMe}
-              onClick={clearAboutMeHandler}
-            >
-              x
-            </button>
-          )}
+          <div className={styles.about}>
+            <h4>ABOUT ME</h4>
+            {ctx.aboutMe && (
+              <button
+                className={styles.clearAboutMe}
+                onClick={clearAboutMeHandler}
+              >
+                x
+              </button>
+            )}
+          </div>
           <p>{ctx.aboutMe && ctx.aboutMe}</p>
           <h4>SKILLS</h4>
           {ctx.skill &&
@@ -93,9 +95,11 @@ const CvOutput = () => {
             ctx.education.map((education) => (
               <EducationOutput key={education.id} education={education} />
             ))}
-          <button className={styles.clearCv} onClick={clearCvHandler}>
-            Clear CV
-          </button>
+          <div>
+            <button className={styles.clearCv} onClick={clearCvHandler}>
+              Clear CV
+            </button>
+          </div>
         </div>
       </div>
     </React.Fragment>
