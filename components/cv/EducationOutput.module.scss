@@ -1,3 +1,5 @@
+$primaryButton: #263547;
+
 .edu {
   display: flex;
   flex-direction: column;
@@ -14,7 +16,7 @@
   height: 13px;
   border-radius: 3px;
   border: 1px solid black;
-  background-color: #263547;
+  background-color: $primaryButton;
   color: white;
   font-size: 10px;
   padding: 0px 3px;

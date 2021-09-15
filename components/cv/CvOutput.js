@@ -95,11 +95,9 @@ const CvOutput = () => {
             ctx.education.map((education) => (
               <EducationOutput key={education.id} education={education} />
             ))}
-          <div>
-            <button className={styles.clearCv} onClick={clearCvHandler}>
-              Clear CV
-            </button>
-          </div>
+          <button className={styles.clearCv} onClick={clearCvHandler}>
+            Clear CV
+          </button>
         </div>
       </div>
     </React.Fragment>
