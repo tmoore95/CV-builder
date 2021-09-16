@@ -66,7 +66,7 @@ $primaryButton: #263547;
 .clearCv {
   position: relative;
   width: 75px;
-  top: 340px;
+  top: 512px;
   left: 197px;
   border-radius: 3px;
   border: 1px solid black;
@@ -159,4 +159,8 @@ $primaryButton: #263547;
 
 .about {
   margin-bottom: -18px;
+}
+
+.section {
+  margin-top: -22px;
 }

@@ -81,23 +81,25 @@ const CvOutput = () => {
           </div>
         </div>
         <div className={styles.content}>
-          <div className={styles.title}>
-            <h3>EMPLOYMENT HISTORY</h3>
-          </div>
-          {ctx.workExperience &&
-            ctx.workExperience.map((job) => (
-              <WorkExperienceOutput key={job.id} job={job} />
-            ))}
-          <div className={styles.title}>
-            <h3>EDUCATION</h3>
-          </div>
-          {ctx.education &&
-            ctx.education.map((education) => (
-              <EducationOutput key={education.id} education={education} />
-            ))}
           <button className={styles.clearCv} onClick={clearCvHandler}>
             Clear CV
           </button>
+          <div className={styles.section}>
+            <div className={styles.title}>
+              <h3>EMPLOYMENT HISTORY</h3>
+            </div>
+            {ctx.workExperience &&
+              ctx.workExperience.map((job) => (
+                <WorkExperienceOutput key={job.id} job={job} />
+              ))}
+            <div className={styles.title}>
+              <h3>EDUCATION</h3>
+            </div>
+            {ctx.education &&
+              ctx.education.map((education) => (
+                <EducationOutput key={education.id} education={education} />
+              ))}
+          </div>
         </div>
       </div>
     </React.Fragment>
